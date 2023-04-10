@@ -11,7 +11,7 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
-  late AppBar1 appBar= const AppBar1();
+  late AppBar1 appBar = const AppBar1();
 
   @override
   void initState() {
@@ -24,7 +24,7 @@ class _FoodPageState extends State<FoodPage> {
       appBar: appBar,
       body: const Center(
         child: Text(
-          'Hello, World!',
+          'Remember!',
           style: TextStyle(fontSize: 24.0),
         ),
       ),
