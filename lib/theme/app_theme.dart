@@ -16,10 +16,12 @@ const ColorScheme _appColorScheme = ColorScheme.light(
   onPrimary: Colors.white,
   secondary: Color(0xFF5991FF),
   secondaryContainer: Color(0x0f1E1E1E),
-  background: Color(0xFFF7F8FA),
+  // background: Color(0xFFF7F8FA),
+  background: Colors.black,
   surface: Color(0XFFE9453F),
   error: Color(0xFFDE440C),
   onBackground: Colors.white,
+  // onBackground: Colors.black,
   onError: Colors.white,
   brightness: Brightness.light,
 );
@@ -106,10 +108,9 @@ extension CustomStyles on TextTheme {
         fontWeight: FontWeight.w400,
         fontSize: 12,
       );
-  
+
   TextStyle get ticketsLocationText => GoogleFonts.firaSans(
         fontWeight: FontWeight.w400,
         fontSize: 17,
       );
 }
-
