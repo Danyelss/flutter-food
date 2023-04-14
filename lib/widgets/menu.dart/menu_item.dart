@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class MenuItem extends StatelessWidget {
+class FoodMenuItem extends StatelessWidget {
   final String imageUrl;
   final String strMeal;
   final String strCategory;
 
-  const MenuItem(
+  const FoodMenuItem(
       {super.key,
       required this.imageUrl,
       required this.strMeal,
