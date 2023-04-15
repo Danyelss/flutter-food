@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:food_app/components/category_card.dart';
+import 'package:food_app/components/category_display/category_card.dart';
 
 class CategoryComponent extends StatefulWidget {
   const CategoryComponent({super.key});
@@ -17,19 +15,25 @@ class _CategoryComponentState extends State<CategoryComponent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('All Categories'),
+          Text(
+            'All Categories',
+            style: Theme.of(context)
+                .textTheme
+                .headlineMedium!
+                .copyWith(color: Theme.of(context).colorScheme.onBackground),
+          ),
           const SizedBox(
             height: 8,
           ),
-          Container(
+          SizedBox(
             height: 106,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
-                return Container(
+                return const SizedBox(
                   height: 50,
-                  child: const Center(
+                  child: Center(
                     child: CategoryCard(),
                   ),
                 );
@@ -37,7 +41,7 @@ class _CategoryComponentState extends State<CategoryComponent> {
               separatorBuilder: (BuildContext context, int index) {
                 return const SizedBox(width: 16);
               },
-              itemCount: 10,
+              itemCount: 100,
             ),
           )
         ]);

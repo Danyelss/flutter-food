@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/menu/menu.dart';
+import 'package:food_app/components/category_display/category_display.dart';
+import 'package:food_app/components/food_list_display/food_list_display.dart';
 import 'package:food_app/widgets/appBar/app_bar.dart';
-import 'package:food_app/widgets/appBar/title.dart';
-import 'package:food_app/widgets/menu.dart/menu_item.dart';
 
 class FoodPage extends StatefulWidget {
   const FoodPage({super.key, required this.title});
@@ -24,23 +23,19 @@ class _FoodPageState extends State<FoodPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar,
-      body: Center(
-          child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                childAspectRatio: 1,
-              ),
-              itemCount: 100,
-              addAutomaticKeepAlives: true, // only keep visible items in memory
-              itemBuilder: (BuildContext context, int index) {
-                return const FoodMenuItem(
-                    imageUrl:
-                        "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
-                    strMeal: "Jerk chicken with rice & peas",
-                    strCategory: "Chicken");
-              })),
+      body: Column(
+        children: const [
+          Padding(
+              padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 16.0),
+              child: CategoryComponent()),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(16.0),
+              child: FoodList(),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
