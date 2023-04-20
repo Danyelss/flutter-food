@@ -14,7 +14,7 @@ class _FoodListState extends State<FoodList> {
   Widget build(BuildContext context) {
     return GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: MediaQuery.of(context).size.width ~/ 178,
+            crossAxisCount: MediaQuery.of(context).size.width ~/ 179,
             mainAxisSpacing: 8,
             crossAxisSpacing: 8,
             childAspectRatio: 0.7),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:food_app/data/location/location.dart';
 
 class AppBarTitle extends StatefulWidget {
   const AppBarTitle({super.key});
@@ -10,7 +11,23 @@ class AppBarTitle extends StatefulWidget {
   State<AppBarTitle> createState() => _AppBarTitleState();
 }
 
+String getLocation(LocationService locationService) async {
+  String location = '';
+  locationService.getLocation().then((value) => location = value);
+  return location;
+}
+
 class _AppBarTitleState extends State<AppBarTitle> {
+  final LocationService _locationService = LocationService();
+  late String location;
+
+  @override
+  Future<void> initState() async {
+    location = getLocation(_locationService);
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,7 +74,7 @@ class _AppBarTitleState extends State<AppBarTitle> {
                                       .withOpacity(0.7)),
                         ),
                         Text(
-                          'Cluj Napoca, Iulius...',
+                          location,
                           style: Theme.of(context)
                               .textTheme
                               .titleSmall!
