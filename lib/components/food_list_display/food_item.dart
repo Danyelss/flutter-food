@@ -17,7 +17,7 @@ class FoodMenuItem extends StatelessWidget {
         height: 238,
         width: 167.5,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
+            borderRadius: const BorderRadius.all(Radius.circular(16)),
             color: Theme.of(context).colorScheme.onPrimary),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

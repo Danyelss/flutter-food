@@ -22,13 +22,13 @@ class DioClient {
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgress,
       );
-      if (returnResponse)
+      if (returnResponse) {
         return response;
-      else
+      } else {
         return response.data;
+      }
     } catch (e) {
-      print(e.toString());
-      throw e;
+      rethrow;
     }
   }
 
@@ -54,7 +54,7 @@ class DioClient {
       );
       return response;
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 
@@ -80,7 +80,7 @@ class DioClient {
       );
       return response.data;
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 
@@ -104,7 +104,7 @@ class DioClient {
       );
       return response.data;
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 }

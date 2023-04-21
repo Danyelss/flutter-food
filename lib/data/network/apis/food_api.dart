@@ -11,27 +11,23 @@ class FoodApi {
   Future<List<Category>> getCategories() async {
     try {
       final res = await _dioClient.get(FoodEndpoints.categories);
-      print(res);
-      print(res['categories'].length);
+
+      // process res
 
       return [];
       // return Category.fromJson(res['categories']);
     } catch (e) {
-      print(e.toString());
-      throw e;
+      rethrow;
     }
   }
 
   Future<List<Meal>> getMeals() async {
     try {
       final res = await _dioClient.get(FoodEndpoints.categories);
-      print(res);
-      print(res['meals'].length);
       return [];
       // return Meal.fromJson(res['meals']);
     } catch (e) {
-      print(e.toString());
-      throw e;
+      rethrow;
     }
   }
 }
